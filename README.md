@@ -1,2 +1,2 @@
-# BouncyCastleExample
-BouncyCastle,Example,RSA,Crypto,Cryptography,Example
+# BouncyCastle Example
+This project has only BouncyCastle examples for easy reference.
