@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BouncyCastleExample
 {
@@ -9,7 +8,8 @@ namespace BouncyCastleExample
     {
         static void Main(string[] args)
         {
-            Parallel.For(0, 100, i => { RSA_Sample.Test(); });
+            RSA_Example.Test();
+            Console.WriteLine("The test is finished. ");
             Console.Read();
         }
     }

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4EB669D-7C88-48C0-A480-C5CC73A7369B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UnitTests</RootNamespace>
+    <AssemblyName>UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;SEPARATE_UNIT_TESTS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <NoWarn>219</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <NoWarn>219</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>lib\nunit.core.interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>lib\nunit.core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="src\crypto\test\AeadTestUtilities.cs" />
+    <Compile Include="src\crypto\test\AESFastTest.cs" />
+    <Compile Include="src\crypto\test\AESLightTest.cs" />
+    <Compile Include="src\crypto\test\AESTest.cs" />
+    <Compile Include="src\crypto\test\AESWrapTest.cs" />
+    <Compile Include="src\crypto\test\AllTests.cs" />
+    <Compile Include="src\crypto\test\BCryptTest.cs" />
+    <Compile Include="src\crypto\test\Blake2bDigestTest.cs" />
+    <Compile Include="src\crypto\test\Blake2sDigestTest.cs" />
+    <Compile Include="src\crypto\test\BlockCipherMonteCarloTest.cs" />
+    <Compile Include="src\crypto\test\BlockCipherVectorTest.cs" />
+    <Compile Include="src\crypto\test\BlowfishTest.cs" />
+    <Compile Include="src\crypto\test\CamelliaLightTest.cs" />
+    <Compile Include="src\crypto\test\CamelliaTest.cs" />
+    <Compile Include="src\crypto\test\Cast5Test.cs" />
+    <Compile Include="src\crypto\test\CAST6Test.cs" />
+    <Compile Include="src\crypto\test\cavp\CavpReader.cs" />
+    <Compile Include="src\crypto\test\cavp\KDFCounterTests.cs" />
+    <Compile Include="src\crypto\test\cavp\KDFDoublePipelineTests.cs" />
+    <Compile Include="src\crypto\test\cavp\KDFFeedbackCounterTests.cs" />
+    <Compile Include="src\crypto\test\CCMTest.cs" />
+    <Compile Include="src\crypto\test\ChaCha20Poly1305Test.cs" />
+    <Compile Include="src\crypto\test\ChaChaTest.cs" />
+    <Compile Include="src\crypto\test\CipherTest.cs" />
+    <Compile Include="src\crypto\test\CMacTest.cs" />
+    <Compile Include="src\crypto\test\CTSTest.cs" />
+    <Compile Include="src\crypto\test\DESedeTest.cs" />
+    <Compile Include="src\crypto\test\DESTest.cs" />
+    <Compile Include="src\crypto\test\DeterministicDSATest.cs" />
+    <Compile Include="src\crypto\test\DHKEKGeneratorTest.cs" />
+    <Compile Include="src\crypto\test\DHTest.cs" />
+    <Compile Include="src\crypto\test\DigestRandomNumberTest.cs" />
+    <Compile Include="src\crypto\test\DigestTest.cs" />
+    <Compile Include="src\crypto\test\DSATest.cs" />
+    <Compile Include="src\crypto\test\DSTU7564Test.cs" />
+    <Compile Include="src\crypto\test\DSTU7624Test.cs" />
+    <Compile Include="src\crypto\test\EAXTest.cs" />
+    <Compile Include="src\crypto\test\ECDHKEKGeneratorTest.cs" />
+    <Compile Include="src\crypto\test\ECGOST3410Test.cs" />
+    <Compile Include="src\crypto\test\ECGOST3410_2012Test.cs" />
+    <Compile Include="src\crypto\test\ECIESTest.cs" />
+    <Compile Include="src\crypto\test\ECNRTest.cs" />
+    <Compile Include="src\crypto\test\ECTest.cs" />
+    <Compile Include="src\crypto\test\Ed25519Test.cs" />
+    <Compile Include="src\crypto\test\Ed448Test.cs" />
+    <Compile Include="src\crypto\test\ElGamalTest.cs" />
+    <Compile Include="src\crypto\test\EqualsHashCodeTest.cs" />
+    <Compile Include="src\crypto\test\GcmReorderTest.cs" />
+    <Compile Include="src\crypto\test\GCMTest.cs" />
+    <Compile Include="src\crypto\test\GMacTest.cs" />
+    <Compile Include="src\crypto\test\GOST28147MacTest.cs" />
+    <Compile Include="src\crypto\test\GOST28147Test.cs" />
+    <Compile Include="src\crypto\test\GOST3410Test.cs" />
+    <Compile Include="src\crypto\test\GOST3411DigestTest.cs" />
+    <Compile Include="src\crypto\test\GOST3411_2012_256DigestTest.cs" />
+    <Compile Include="src\crypto\test\GOST3411_2012_512DigestTest.cs" />
+    <Compile Include="src\crypto\test\HCFamilyTest.cs" />
+    <Compile Include="src\crypto\test\HCFamilyVecTest.cs" />
+    <Compile Include="src\crypto\test\HKDFGeneratorTest.cs" />
+    <Compile Include="src\crypto\test\IDEATest.cs" />
+    <Compile Include="src\crypto\test\ISAACTest.cs" />
+    <Compile Include="src\crypto\test\ISO9796Test.cs" />
+    <Compile Include="src\crypto\test\ISO9797Alg3MacTest.cs" />
+    <Compile Include="src\crypto\test\KDF1GeneratorTest.cs" />
+    <Compile Include="src\crypto\test\KDF2GeneratorTest.cs" />
+    <Compile Include="src\crypto\test\KeccakDigestTest.cs" />
+    <Compile Include="src\crypto\test\MacTest.cs" />
+    <Compile Include="src\crypto\test\MD2DigestTest.cs" />
+    <Compile Include="src\crypto\test\MD4DigestTest.cs" />
+    <Compile Include="src\crypto\test\MD5DigestTest.cs" />
+    <Compile Include="src\crypto\test\MD5HMacTest.cs" />
+    <Compile Include="src\crypto\test\MGF1GeneratorTest.cs" />
+    <Compile Include="src\crypto\test\ModeTest.cs" />
+    <Compile Include="src\crypto\test\NaccacheSternTest.cs" />
+    <Compile Include="src\crypto\test\NoekeonTest.cs" />
+    <Compile Include="src\crypto\test\NonMemoableDigestTest.cs" />
+    <Compile Include="src\crypto\test\NullTest.cs" />
+    <Compile Include="src\crypto\test\OAEPTest.cs" />
+    <Compile Include="src\crypto\test\OCBTest.cs" />
+    <Compile Include="src\crypto\test\OpenBsdBCryptTest.cs" />
+    <Compile Include="src\crypto\test\PaddingTest.cs" />
+    <Compile Include="src\crypto\test\Pkcs12Test.cs" />
+    <Compile Include="src\crypto\test\Pkcs5Test.cs" />
+    <Compile Include="src\crypto\test\Poly1305Test.cs" />
+    <Compile Include="src\crypto\test\PSSBlindTest.cs" />
+    <Compile Include="src\crypto\test\PSSTest.cs" />
+    <Compile Include="src\crypto\test\RC2Test.cs" />
+    <Compile Include="src\crypto\test\RC2WrapTest.cs" />
+    <Compile Include="src\crypto\test\RC4Test.cs" />
+    <Compile Include="src\crypto\test\RC5Test.cs" />
+    <Compile Include="src\crypto\test\RC6Test.cs" />
+    <Compile Include="src\crypto\test\RegressionTest.cs" />
+    <Compile Include="src\crypto\test\RFC3211WrapTest.cs" />
+    <Compile Include="src\crypto\test\RijndaelTest.cs" />
+    <Compile Include="src\crypto\test\RipeMD128DigestTest.cs" />
+    <Compile Include="src\crypto\test\RipeMD128HMacTest.cs" />
+    <Compile Include="src\crypto\test\RipeMD160DigestTest.cs" />
+    <Compile Include="src\crypto\test\RipeMD160HMacTest.cs" />
+    <Compile Include="src\crypto\test\RipeMD256DigestTest.cs" />
+    <Compile Include="src\crypto\test\RipeMD320DigestTest.cs" />
+    <Compile Include="src\crypto\test\RSABlindedTest.cs" />
+    <Compile Include="src\crypto\test\RsaTest.cs" />
+    <Compile Include="src\crypto\test\Salsa20Test.cs" />
+    <Compile Include="src\crypto\test\SCryptTest.cs" />
+    <Compile Include="src\crypto\test\SEEDTest.cs" />
+    <Compile Include="src\crypto\test\SerpentTest.cs" />
+    <Compile Include="src\crypto\test\SHA1DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA1HMacTest.cs" />
+    <Compile Include="src\crypto\test\SHA224DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA224HMacTest.cs" />
+    <Compile Include="src\crypto\test\SHA256DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA256HMacTest.cs" />
+    <Compile Include="src\crypto\test\SHA384DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA384HMacTest.cs" />
+    <Compile Include="src\crypto\test\SHA3DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA512DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA512HMacTest.cs" />
+    <Compile Include="src\crypto\test\SHA512t224DigestTest.cs" />
+    <Compile Include="src\crypto\test\SHA512t256DigestTest.cs" />
+    <Compile Include="src\crypto\test\ShakeDigestTest.cs" />
+    <Compile Include="src\crypto\test\ShortenedDigestTest.cs" />
+    <Compile Include="src\crypto\test\SipHashTest.cs" />
+    <Compile Include="src\crypto\test\SkeinDigestTest.cs" />
+    <Compile Include="src\crypto\test\SkeinMacTest.cs" />
+    <Compile Include="src\crypto\test\SkipjackTest.cs" />
+    <Compile Include="src\crypto\test\SM2EngineTest.cs" />
+    <Compile Include="src\crypto\test\SM2KeyExchangeTest.cs" />
+    <Compile Include="src\crypto\test\SM2SignerTest.cs" />
+    <Compile Include="src\crypto\test\SM3DigestTest.cs" />
+    <Compile Include="src\crypto\test\SM4Test.cs" />
+    <Compile Include="src\crypto\test\SRP6Test.cs" />
+    <Compile Include="src\crypto\test\StreamCipherResetTest.cs" />
+    <Compile Include="src\crypto\test\StreamCipherVectorTest.cs" />
+    <Compile Include="src\crypto\test\TEATest.cs" />
+    <Compile Include="src\crypto\test\Threefish1024Test.cs" />
+    <Compile Include="src\crypto\test\Threefish256Test.cs" />
+    <Compile Include="src\crypto\test\Threefish512Test.cs" />
+    <Compile Include="src\crypto\test\TigerDigestTest.cs" />
+    <Compile Include="src\crypto\test\TnepresTest.cs" />
+    <Compile Include="src\crypto\test\TwofishTest.cs" />
+    <Compile Include="src\crypto\test\VMPCKSA3Test.cs" />
+    <Compile Include="src\crypto\test\VMPCMacTest.cs" />
+    <Compile Include="src\crypto\test\VMPCTest.cs" />
+    <Compile Include="src\crypto\test\WhirlpoolDigestTest.cs" />
+    <Compile Include="src\crypto\test\X25519Test.cs" />
+    <Compile Include="src\crypto\test\X448Test.cs" />
+    <Compile Include="src\crypto\test\X931SignerTest.cs" />
+    <Compile Include="src\crypto\test\XSalsa20Test.cs" />
+    <Compile Include="src\crypto\test\XTEATest.cs" />
+    <Compile Include="src\test\AESSICTest.cs" />
+    <Compile Include="src\test\AESTest.cs" />
+    <Compile Include="src\test\AttrCertSelectorTest.cs" />
+    <Compile Include="src\test\AttrCertTest.cs" />
+    <Compile Include="src\test\BaseBlockCipherTest.cs" />
+    <Compile Include="src\test\BlockCipherTest.cs" />
+    <Compile Include="src\test\CMacTest.cs" />
+    <Compile Include="src\test\CRL5Test.cs" />
+    <Compile Include="src\test\CamelliaTest.cs" />
+    <Compile Include="src\test\CertPathBuilderTest.cs" />
+    <Compile Include="src\test\CertPathTest.cs" />
+    <Compile Include="src\test\CertPathValidatorTest.cs" />
+    <Compile Include="src\test\CertTest.cs" />
+    <Compile Include="src\test\CipherStreamTest.cs" />
+    <Compile Include="src\test\DESedeTest.cs" />
+    <Compile Include="src\test\DHTest.cs" />
+    <Compile Include="src\test\DSATest.cs" />
+    <Compile Include="src\test\DigestTest.cs" />
+    <Compile Include="src\test\ECDSA5Test.cs" />
+    <Compile Include="src\test\ECEncodingTest.cs" />
+    <Compile Include="src\test\ECNRTest.cs" />
+    <Compile Include="src\test\ElGamalTest.cs" />
+    <Compile Include="src\test\EncryptedPrivateKeyInfoTest.cs" />
+    <Compile Include="src\test\FIPSDESTest.cs" />
+    <Compile Include="src\test\GOST28147Test.cs" />
+    <Compile Include="src\test\GOST3410Test.cs" />
+    <Compile Include="src\test\HMacTest.cs" />
+    <Compile Include="src\test\IESTest.cs" />
+    <Compile Include="src\test\KdfCounterTest.cs" />
+    <Compile Include="src\test\MacTest.cs" />
+    <Compile Include="src\test\MqvTest.cs" />
+    <Compile Include="src\test\NamedCurveTest.cs" />
+    <Compile Include="src\test\NistCertPathTest.cs" />
+    <Compile Include="src\test\NoekeonTest.cs" />
+    <Compile Include="src\test\PBETest.cs" />
+    <Compile Include="src\test\PEMData.cs" />
+    <Compile Include="src\test\PKCS10CertRequestTest.cs" />
+    <Compile Include="src\test\PSSTest.cs" />
+    <Compile Include="src\test\PkixNameConstraintsTest.cs" />
+    <Compile Include="src\test\PkixPolicyMappingTest.cs" />
+    <Compile Include="src\test\PkixTest.cs" />
+    <Compile Include="src\test\RSATest.cs" />
+    <Compile Include="src\test\RegressionTest.cs" />
+    <Compile Include="src\test\SEEDTest.cs" />
+    <Compile Include="src\test\SigTest.cs" />
+    <Compile Include="src\test\SM4Test.cs" />
+    <Compile Include="src\test\TestUtilities.cs" />
+    <Compile Include="src\test\WrapTest.cs" />
+    <Compile Include="src\test\X509CertificatePairTest.cs" />
+    <Compile Include="src\test\X509StoreTest.cs" />
+    <Compile Include="src\test\nist\NistCertPathTest.cs" />
+    <Compile Include="src\test\nist\NistCertPathTest2.cs" />
+    <Compile Include="src\test\rsa3\RSA3CertTest.cs" />
+    <Compile Include="src\util\io\pem\test\AllTests.cs" />
+    <Compile Include="src\util\net\test\IPAddressTest.cs" />
+    <Compile Include="src\util\test\FixedSecureRandom.cs" />
+    <Compile Include="src\util\test\ITest.cs" />
+    <Compile Include="src\util\test\ITestResult.cs" />
+    <Compile Include="src\util\test\NumberParsing.cs" />
+    <Compile Include="src\util\test\SimpleTest.cs" />
+    <Compile Include="src\util\test\SimpleTestResult.cs" />
+    <Compile Include="src\util\test\TestFailedException.cs" />
+    <Compile Include="src\util\test\TestRandomBigInteger.cs" />
+    <Compile Include="src\util\test\UncloseableStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

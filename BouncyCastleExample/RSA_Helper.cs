@@ -11,30 +11,6 @@ namespace BouncyCastleExample
 {
     internal static class RSA_Helper
     {
-        /// <summary>
-        /// 产生密钥
-        /// </summary>
-        /// <param name="xmlPrivateKey">私钥</param>
-        /// <param name="xmlPublicKey">公钥</param>
-        public static void CreateKeysOnly(out string xmlPrivateKey, out string xmlPublicKey)
-        {
-            using (var rsa = CreateKeys(out xmlPrivateKey, out xmlPublicKey)) { }
-        }
-
-        /// <summary>
-        /// 产生密钥
-        /// </summary>
-        /// <param name="xmlPrivateKey">私钥</param>
-        /// <param name="xmlPublicKey">公钥</param>
-        public static RSACryptoServiceProvider CreateKeys(out string xmlPrivateKey, out string xmlPublicKey)
-        {
-            var rsa = new RSACryptoServiceProvider();
-            xmlPrivateKey = rsa.ToXmlString(true);
-            xmlPublicKey = rsa.ToXmlString(false);
-            return rsa;
-        }
-
-
         #region IBufferedCipher
 
         /// <summary>
@@ -192,6 +168,34 @@ namespace BouncyCastleExample
                 var decrypted = decryptEngine.ProcessBlock(toDecrypt, 0, toDecrypt.Length);
                 return decrypted;
             }
+        }
+
+        #endregion
+
+
+        #region HelperMethods
+
+        /// <summary>
+        /// 产生密钥
+        /// </summary>
+        /// <param name="xmlPrivateKey">私钥</param>
+        /// <param name="xmlPublicKey">公钥</param>
+        public static void CreateKeysOnly(out string xmlPrivateKey, out string xmlPublicKey)
+        {
+            using (var rsa = CreateKeys(out xmlPrivateKey, out xmlPublicKey)) { }
+        }
+
+        /// <summary>
+        /// 产生密钥
+        /// </summary>
+        /// <param name="xmlPrivateKey">私钥</param>
+        /// <param name="xmlPublicKey">公钥</param>
+        public static RSACryptoServiceProvider CreateKeys(out string xmlPrivateKey, out string xmlPublicKey)
+        {
+            var rsa = new RSACryptoServiceProvider();
+            xmlPrivateKey = rsa.ToXmlString(true);
+            xmlPublicKey = rsa.ToXmlString(false);
+            return rsa;
         }
 
         #endregion
